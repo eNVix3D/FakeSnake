@@ -5,7 +5,7 @@
 
 void setup(){
  size(1000,1000); 
- 
+    
  for(int i=0; i<BallAmount; i++){
    X[i] = (i+1)*10; 
    Y[i] = 100;
@@ -14,11 +14,15 @@ void setup(){
 
 void draw(){
   clear();
-  background(150);
+  background(50);
   
  for(int i=0 ; i<X.length ; i++){
    noStroke();
-   fill(i*(255/BallAmount));
+   //Convert float to int for better RGB control
+
+   
+   fill((255.0/BallAmount)*i,0,255);
+   //fill(i*(255/BallAmount));
    //circle(X[i],Y[i],10);
    rect(X[i],Y[i],10,10);
  }
